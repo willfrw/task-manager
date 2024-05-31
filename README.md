@@ -1,4 +1,3 @@
-```markdown
 # Task Manager API
 
 Esta API é obra de um trabalho avaliativo da disciplina de Tópicos Especiais em Ads do curso de Análise e Desenvolvimento de Sistemas pela UNILASALLE.
@@ -16,7 +15,7 @@ Para utilizar e executar este projeto, você precisará ter os seguintes softwar
 
 1. Clone o repositório para sua máquina local:
    ```bash
-   git clone https://github.com/seu-usuario/task-manager-api.git
+   git clone https://github.com/seu-usuario/task-manager.git
    ```
 
 2. Navegue até o diretório do projeto:
@@ -118,5 +117,3 @@ Acesse `http://localhost:3000` no seu navegador para visualizar o dashboard que 
 - [Código exemplo do professor](https://replit.com/@faustovanin/Express-API-Example#index.js)
 - [Vídeo recomendado pelo professor](https://www.youtube.com/watch?v=Cdu0WJhI-d8)
 - ChatGPT para ajustes e correções do código, adaptação para banco de dados NoSQL usando MongoDB
-
-```
