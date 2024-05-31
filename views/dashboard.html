@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Tarefas</title>
+    <script src="https://cdn.jsdelivr,net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Dashboard de Tarefas</h1>
+    <canvas id="taskChart" width="400" height="200"></canvas>
+
+    <script>
+        async function fetchData() {
+            const response = await fetch('/tasks');
+            const data = await response.json();
+            return data;
+        }
+
+        async function renderChart() {
+            const data = await fetchData();
+            const ctx = document.getElementeById('taskChart').getContext('2d');
+
+            const chartData = {
+                labels: data.map(task => task.title),
+                datasets: [{
+                    label: 'Status Tarefa',
+                    data: data.map(task => task.status === 'completa' ? 1 : 0),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: chartData,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
